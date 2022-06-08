@@ -1,22 +1,8 @@
 import React from 'react'
-import styled from 'styled-components'
 
-
-
-export default function LogoInitial({
-  children,
-  alto,
-  ancho,
-  sizeTitle,
-  title,
-  titleAlt,
-
-}) {
+const LogoWeb = () => {
   return (
-
-      <DivInicio alto={alto} ancho={ancho} title={title} titleAlt={titleAlt} className="btn btn-primary text-center">
-      
-      <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+    <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
       width="256.000000pt" height="216.000000pt" viewBox="0 0 256.000000 216.000000"
       preserveAspectRatio="xMidYMid meet" >
       <g transform="translate(0.000000,216.000000) scale(0.100000,-0.100000)"
@@ -60,42 +46,7 @@ export default function LogoInitial({
       210 10 96 4 177 9 179 11 2 2 7 2 10 -1 4 -2 79 -5 167 -6z"/>
       </g>
       </svg>
-      <DivMiddle>
-            {title}
-            {titleAlt}
-      </DivMiddle>
-      </DivInicio>
   )
 }
 
-const DivInicio = styled.div`
-    width:${props => props.ancho ? props.ancho :'130px'};
-    height: ${props => props.alto ? props.alto :'60px'};
-    margin-left:20px;
-    display: flex;
-	  align-items:center;
-	  justify-content: center;
-    box-shadow: rgba(0,0,111, 0.2) 0px 7px 29px 8px;
-
-
-    svg{
-      width:${props => props.ancho ? props.ancho :'130px'};
-      height:${props => props.alto ? props.alto :'60px'};
-      padding:10px; 
-      align-self:center; 
-      &:hover{
-
-        fill:#fc4b08;
-      } 
-    }
-    
-`;
-
-const DivMiddle = styled.div`
-    position: absolute;
-  
-    background-color:transparent;
-    justify-content:center;
-    align-items:center;
-    padding:2px;
-`;
+export default LogoWeb
