@@ -2,6 +2,7 @@ import { React, useState } from 'react'
 import { useAuth } from '../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
 import Alerts from './utils/Alerts'
+import styled from 'styled-components'
 
 function Register() {
     const { signup, addUserInFirestore } = useAuth();
@@ -39,8 +40,9 @@ function Register() {
     }
 
     return (
-
-        <form className="card bg-secondary card-body" onSubmit={handleSubmit}>
+        
+        <Content>
+        <form className="card-body color-bg" onSubmit={handleSubmit}>
             <h1 className="text-center display-1">Register</h1>
             {error && <Alerts message={error} />}
             <div className="form-group input-group p-3">
@@ -83,21 +85,39 @@ function Register() {
                 />
             </div>
             <div className="form-check mx-4 pl-5 pt-4">
-                <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                <input className="form-check-input" type="checkbox"  id="flexCheckDefault" />
                 <label className="form-check-label " for="flexCheckDefault">
                     <p> Soy mayor de 18 años </p>
                 </label>
             </div>
             <div className="form-check mx-4 pl-5">
-                <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                <label className="form-check-label " for="flexCheckDefault">
+                <input className="form-check-input" type="checkbox" id="flexCheckDefault2" />
+                <label className="form-check-label " for="flexCheckDefault2">
                     <p> Al registrame acpto todos los terminos y condiciones. </p>
                 </label>
             </div>
-            <button className="btn btn-success btn-block m-3" onClick={handleSubmit}>Register</button>
+            <div className="row form-group input-group ms-1 me-1 p-3">
+            <button className="btn btn-success " onClick={handleSubmit}>Register</button>
+            <p></p>
             <strong className='text-center'>Cookies y politicas de seguridad</strong>
+            </div>
         </form>
+        
+        </Content>
     )
 }
 
 export default Register
+
+const Content = styled.div`
+
+h1{
+    color:#fc4b08
+}
+.color-bg{
+
+    background-color:#000000;
+}
+
+
+`;

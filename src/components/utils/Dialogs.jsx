@@ -54,7 +54,7 @@ const Overlay = styled.div`
 `;
 
 const DialogContainer = styled.div`
-    width: 500px;
+    width: 70vh;
     min-height: 100px;
     position: relative;
     top: 0;
@@ -67,6 +67,7 @@ const DialogHeader = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-top:5px;
     margin-bottom: 20px;
     padding-bottom: 20px;
 `;
@@ -74,7 +75,7 @@ const DialogHeader = styled.div`
 const BtnCloseDialog = styled.div`
     position: absolute;
     background:none;
-    top: 10px;
+    top: 15px;
     right: 10px;
     width: 30px;
     height: 30px;

@@ -7,7 +7,7 @@ const MenuProducts = (props, { children }) => {
 
   return (
     <DivMenu className="card">
-      <button className='btn btn-primary formBtn black login align-self-center' onClick={() => navigate('/login')}> Iniciar Sesion</button>
+      
       <div className="row card-body p-2">
         <DivBtn className="btn-group-horizontal   w-50 h-50 col">
           <button type="button" className={!props.promos ? "btn btn-outline-primary formBtn orange h-100 w-100 m-2" : "btn btn-outline-primary formBtn orange disabled"} onClick={() => { navigate('/product') }}><h2>Promos</h2></button>

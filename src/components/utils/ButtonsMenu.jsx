@@ -1,19 +1,21 @@
 import React from 'react'
 import styled from 'styled-components'
-import LogoWeb from './LogoWeb';
+import LogoPromo from './LogoPromo';
+import promo from '../../assets/img/promo.svg'
 
-export default function Inicio({
+export default function ButtonsMenu({
   children,
   alto,
   ancho,
-  sizeTitle,
   title,
   titleAlt,
-  logo,
+  icon,
+  colorIcon,
+  bgColor
 }) {
   return (
-      <DivInicio alto={alto} ancho={ancho} title={title} titleAlt={titleAlt} className="btn btn-primary text-center container-fluid">
-        <LogoWeb/>
+      <DivInicio alto={alto} ancho={ancho} title={title} titleAlt={titleAlt} icon={icon} colorIcon={colorIcon} bgColor={bgColor} className="btn btn-primary text-center container-fluid">
+      <i>{icon}</i>
       <DivMiddle>
             {title}
             {titleAlt}
@@ -28,14 +30,14 @@ const DivInicio = styled.div`
     display: flex;
 	  align-items:center;
 	  justify-content: center;
-    background-color:black;
+    background-color:${props => props.bgColor ? props.bgColor :'black'};
     box-shadow: rgba(252, 75, 8, 0.2) 0px 7px 29px 8px;
     svg{
       width:${props => props.ancho ? props.ancho :'130px'};
       height:${props => props.alto ? props.alto :'60px'};
-      padding:10px; 
+      padding:20px; 
       align-self:center; 
-      fill:#fc4b08;
+      fill:${props => props.colorIcon ? props.colorIcon :'#fc4b08'};
     }  
 `;
 

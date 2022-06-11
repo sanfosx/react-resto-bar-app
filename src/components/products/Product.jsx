@@ -6,6 +6,7 @@ import { db } from '../../firebaseConfig'
 import styled from 'styled-components'
 import { Offcanvas } from 'react-bootstrap'
 import Dialogs from '../utils/Dialogs'
+import NavBar from '../../components/NavBar'
 
 const Product = () => {
 
@@ -18,8 +19,8 @@ const Product = () => {
     const [stateDialog2, changeStateDialog2] = useState(false);
     const [userId, setUserId] = useState('');
     const [total, setTotal] = useState(0)
-    const USER = localStorage.getItem("USER");
-    const  cartId = 'cart-' +USER
+    const USER = JSON.parse(localStorage.getItem("USER"));
+    const  cartId = 'cart-' +USER.uid
   
     const readDB =  () => {//lee en la bd de productos y actualiza con cualquier cambio
         onSnapshot(collection(db, 'datos'), (doc) => {
@@ -82,6 +83,7 @@ const Product = () => {
 
     return (
         <div class="container-fluid m-0">
+            <NavBar></NavBar>
             <div class="row d-flex">
                 <div class="card text bg-secondary mb-3 mt-3 pt-4 col-md-6 col-sm-6 col-xs-6 col-lg-6 col-xl-4 m-0 h-100">
                     <Inicio ancho={'0 auto'} alto={'100px'} title={<h1>Resto Bar</h1>}></Inicio>
